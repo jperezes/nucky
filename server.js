@@ -13,6 +13,7 @@ sparkBot.on('message', function (event)
    var mail = event.personEmail.split('@');
 
    if (mail[1] === "cisco.com"){
+     console.log("message received + ": + event.message)
      let message = "your room id is : " + event.roomId;
      sparkBot.sendMessage(event.roomId, message ,function(){});
    } else {
