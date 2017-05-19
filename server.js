@@ -37,4 +37,4 @@ let bot = function(result){
   console.log(result);
 }
 
-checkCurrency.scheduleServer(bot);
+checkCurrency.scheduleServer(sparkBot);

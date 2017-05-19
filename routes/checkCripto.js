@@ -32,9 +32,9 @@ requestCurrencies.prototype.scheduleServer = function(bot){
         message = message + tempMessage;
       })
 
-      // bot.sendRichTextMessage(roomId,message,function(){
-      //   console.log("user found about to send him a message");
-      // });
+       bot.sendRichTextMessage(process.env.NUCK_DOLORES_ROOM,message,function(){
+        console.log("user found about to send him a message");
+      });
 
       return;
     }));
