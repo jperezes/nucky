@@ -2,6 +2,8 @@ let schedule = require('node-schedule');
 let Promise= require('bluebird')
 let rp = require('request-promise');
 let bodyParser = require('body-parser');
+var express = require('express');
+var router = express.Router();
 
 let requestCurrencies = function(){};
 // Set the headers
@@ -23,7 +25,7 @@ requestCurrencies.prototype.scheduleServer = function(bot){
       //resultRipple = resultRipple.replace("[","").replace("]","")
       result = JSON.parse(result)
       result.forEach(item =>{
-      //  console.log("24h " + item.name + " -> " + item.percent_change_24h + "%");
+        console.log("24h " + item.name + " -> " + item.percent_change_24h + "%");
         tempMessage = "\n\n >24h " + item.name + " -> " + item.percent_change_24h + "%";
         message = message + tempMessage;
       })
