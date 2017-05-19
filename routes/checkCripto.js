@@ -21,6 +21,8 @@ requestCurrencies.prototype.scheduleServer = function(bot){
       let message ="Hello Joan last hour criptocurrency update:";
       let tempMessage="";
 
+      console.log("the domain is: " + process.env.NUCKY_URL)
+
       result = yield rp({url:"https://api.coinmarketcap.com/v1/ticker/?&limit=15",method:'GET'});
       //resultRipple = resultRipple.replace("[","").replace("]","")
       result = JSON.parse(result)
