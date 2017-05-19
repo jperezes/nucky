@@ -1,7 +1,7 @@
 let port = process.env.PORT || 1337;
 let sparklite = require("sparklite");
 let botdomain = process.env.NUCKY_URL;
-let sparkBot = new sparklite.SparkBot(process.env.BERNARD_TOKEN, port, botdomain);
+let sparkBot = new sparklite.SparkBot(process.env.NUCKY_KEY, port, botdomain);
 let CheckCurrency = require('./routes/checkCripto');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 
