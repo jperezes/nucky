@@ -33,6 +33,7 @@ sparkBot.on('memberships', function (event)
     console.log(JSON.stringify(event));
 })
 
+
 let bot = function(result){
   console.log(result);
 }

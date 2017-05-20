@@ -17,15 +17,15 @@ let options = {
 }
 
 requestCurrencies.prototype.scheduleServer = function(bot){
-  schedule.scheduleJob('45 * * * *', Promise.coroutine(function* () {
+  schedule.scheduleJob('55 * * * *', Promise.coroutine(function* () {
       let message ="Hello Joan last hour criptocurrency update:";
       let tempMessage="";
 
       result = yield rp({url:"https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=15",method:'GET'});
       result = JSON.parse(result)
       result.forEach(item =>{
-        console.log("24h " + item.name + " -> " + item.percent_change_24h + "%");
-        tempMessage = "\n\n >24h " + item.name + " -> " + item.percent_change_24h + "%" + " -- 1h " + item.percent_change_1h + " price euro: " + item.price_eur;
+        console.log("24h " + item.name + " -> " + item.percent_change_24h + "%"+ " -- 1h " + item.percent_change_1h + " #price euro: " + item.price_eur);
+        tempMessage = "\n\n >24h " + item.name + " -> " + item.percent_change_24h + "%" + " -- 1h " + item.percent_change_1h + " #price euro: " + item.price_eur;
         message = message + tempMessage;
       })
 
