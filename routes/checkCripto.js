@@ -17,7 +17,7 @@ let options = {
 }
 
 requestCurrencies.prototype.scheduleServer = function(bot){
-  schedule.scheduleJob('55 * * * *', Promise.coroutine(function* () {
+  schedule.scheduleJob('30 * * * * *', Promise.coroutine(function* () {
       let message ="Hello Joan last hour criptocurrency update:";
       let tempMessage="";
 
