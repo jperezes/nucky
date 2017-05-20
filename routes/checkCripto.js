@@ -21,14 +21,11 @@ requestCurrencies.prototype.scheduleServer = function(bot){
       let message ="Hello Joan last hour criptocurrency update:";
       let tempMessage="";
 
-      //console.log("the domain is: " + process.env.NUCKY_URL)
-
-      result = yield rp({url:"https://api.coinmarketcap.com/v1/ticker/?&limit=15",method:'GET'});
-      //resultRipple = resultRipple.replace("[","").replace("]","")
+      result = yield rp({url:"https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=15",method:'GET'});
       result = JSON.parse(result)
       result.forEach(item =>{
         console.log("24h " + item.name + " -> " + item.percent_change_24h + "%");
-        tempMessage = "\n\n >24h " + item.name + " -> " + item.percent_change_24h + "%";
+        tempMessage = "\n\n >24h " + item.name + " -> " + item.percent_change_24h + "%" + " -- 1h " + item.percent_change_1h + " price euro: " + item.price_eur;
         message = message + tempMessage;
       })
 
