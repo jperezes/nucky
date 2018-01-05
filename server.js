@@ -3,7 +3,7 @@ let sparklite = require("sparklite");
 let botdomain = process.env.NUCKY_URL;
 let sparkBot = new sparklite.SparkBot(process.env.NUCKY_KEY, port, botdomain);
 let CheckCurrency = require('./routes/checkCripto');
-let TestApi = require('./routes/test.js')
+let TestApi = require('./routes/temp.js')
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 
 sparkBot.printHelloWorld();
