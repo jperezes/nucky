@@ -29,11 +29,11 @@ botModule.prototype.listenForStadistics = function(bot,app){
     //   return;
     // }
 
-    
+
     bot.sendRichTextMessage(process.env.NUCK_DOLORES_ROOM,"api works so far", function(){})
   });
 
-
+}
 
 module.exports = router;
 module.exports = botModule;

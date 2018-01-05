@@ -43,5 +43,5 @@ sparkBot.on('memberships', function (event)
 let bot = function(result){
   console.log(result);
 }
-testApi.setBot(SparkBot,"-");
+testApi.listenForStadistics(sparkBot, sparkBot.getServer());
 //checkCurrency.scheduleServer(bot);
