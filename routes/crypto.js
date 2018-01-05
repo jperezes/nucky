@@ -10,7 +10,6 @@ cryptoModule.prototype.checkTicker = async function checkResult(){
   console.log(res.result.XXRPZEUR.c[0])
 
   binance.prices(function(ticker) {
-	console.log("prices()", ticker);
 	console.log("Price of BNB: ", ticker.BNBBTC);
 });
 
