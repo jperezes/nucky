@@ -4,15 +4,14 @@ let botdomain = process.env.NUCKY_URL;
 let sparkBot = new sparklite.SparkBot(process.env.NUCKY_KEY, port, botdomain);
 let CheckCurrency = require('./routes/checkCripto');
 let TestApi = require('./routes/temp.js')
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
-
-sparkBot.printHelloWorld();
-//
 
 console.log("bot domain: " + botdomain)
 console.log("bot key: " + process.env.NUCKY_KEY)
 let checkCurrency = new CheckCurrency()
 let testApi = new TestApi()
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+sparkBot.printHelloWorld();
 
 sparkBot.on('message', function (event)
 {
