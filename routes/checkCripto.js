@@ -84,6 +84,7 @@ requestCurrencies.prototype.scheduleServer = function(bot){
 
       result = yield rp({url:"https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=60",method:'GET'});
       result = JSON.parse(result)
+      console.log("result of the request " + result)
       result.forEach(item =>{
       //  console.log("\"" + item.name +"\""  + ":[String],")
         trend[item.name][0] = item.name.percent_change_24h;
