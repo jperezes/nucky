@@ -1,7 +1,7 @@
 let port = process.env.PORT || 1337;
 let sparklite = require("sparklite");
 let botdomain = process.env.NUCKY_URL;
-let sparkBot = new sparklite.SparkBot(process.env.TOM_KEY, port, botdomain);
+let sparkBot = new sparklite.SparkBot(process.env.NUCKY_KEY, port, botdomain);
 let CheckCurrency = require('./routes/checkCripto');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 
@@ -11,6 +11,7 @@ sparkBot.printHelloWorld();
 console.log("bot domain: " + botdomain)
 console.log("bot key: " + process.env.NUCKY_KEY)
 let checkCurrency = new CheckCurrency()
+sparkBot.sendRichTextMessage(process.env.NUCK_DOLORES_ROOM,"hello me nucky",function(){});
 sparkBot.on('message', function (event)
 {
   console.log('I have received an event!!!')
