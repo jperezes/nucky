@@ -8,8 +8,7 @@ console.log("bot domain: " + botdomain)
 console.log("bot key: " + process.env.NUCKY_KEY)
 let checkCurrency = new CheckCurrency()
 let testApi = new TestApi()
-let sparkBot = new sparklite()
-sparkBot.SparkBot(process.env.NUCKY_KEY, port, botdomain);
+let sparkBot = new sparklite.SparkBot(process.env.NUCKY_KEY, port, botdomain);
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 sparkBot.printHelloWorld();
 sparkBot.initializeWeebHooks();
