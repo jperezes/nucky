@@ -13,8 +13,7 @@ let testApi = new TestApi()
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 sparkBot.printHelloWorld();
 
-sparkBot.on('message', function (event)
-{
+sparkBot.on('message', function(event){
   console.log('I have received an event!!!')
    var mail = event.personEmail.split('@');
    console.log("message received + :" + JSON.stringify(event))
@@ -27,18 +26,15 @@ sparkBot.on('message', function (event)
      sparkBot.sendMessage(event.roomId, "Hi, sorry to tell you that but you're not allowed to proceed",function(){});
    }
   console.log(JSON.stringify(event));
+});
 
-})
-
-sparkBot.on('rooms', function (event)
-{
+sparkBot.on('rooms', function(event){
     console.log(JSON.stringify(event));
-})
+});
 
-sparkBot.on('memberships', function (event)
-{
+sparkBot.on('memberships', function (event){
     console.log(JSON.stringify(event));
-})
+});
 
 
 let bot = function(result){
