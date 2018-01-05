@@ -1,4 +1,4 @@
-let port = process.env.PORT || 1337;
+let port = process.env.PORT || 1349;
 let sparklite = require("sparklite");
 let botdomain = process.env.NUCKY_URL;
 let sparkBot = new sparklite.SparkBot(process.env.NUCKY_KEY, port, botdomain);
@@ -13,6 +13,7 @@ console.log("bot domain: " + botdomain)
 console.log("bot key: " + process.env.NUCKY_KEY)
 let checkCurrency = new CheckCurrency()
 let testApi = new TestApi()
+
 sparkBot.on('message', function (event)
 {
   console.log('I have received an event!!!')
@@ -29,6 +30,7 @@ sparkBot.on('message', function (event)
   console.log(JSON.stringify(event));
 
 })
+
 sparkBot.on('rooms', function (event)
 {
     console.log(JSON.stringify(event));
