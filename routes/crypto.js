@@ -1,8 +1,9 @@
 let rp = require('request-promise');
 let schedule = require('node-schedule');
 const binance = require('node-binance-api');
+let cryptoModule = function(){};
 
-let checkTicker = async function checkResult(){
+cryptoModule.prototype.checkTicker = async function checkResult(){
   console.log("about to parse the data from kraken")
   res = await rp({url:"https://api.kraken.com/0/public/Ticker?pair=XXRPZEUR",method:'GET'});
   res = JSON.parse(res)
@@ -15,4 +16,4 @@ let checkTicker = async function checkResult(){
 
 }
 
-checkTicker()
+module.exports = cryptoModule;
